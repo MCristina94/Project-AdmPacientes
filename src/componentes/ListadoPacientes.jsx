@@ -13,9 +13,9 @@ const ListadoPacientes = ({pacientes, setPaciente, eliminarPaciente}) => {
         <span className="text-blue-600 font-bold">Pacientes y citas</span>
         </p>
 
-        {pacientes.map((paciente) => {
+        {pacientes.map((paciente, index) => {
           return(
-            <Paciente key={paciente.id} paciente={paciente} setPaciente = {setPaciente}
+            <Paciente key={index} paciente={paciente} setPaciente={setPaciente}
             eliminarPaciente={eliminarPaciente}/>  
           )
         })}

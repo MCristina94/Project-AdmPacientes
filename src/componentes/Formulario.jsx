@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import Error from './Error';
 
-const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
+const Formulario = ({pacientes, paciente, setPaciente, agregarPaciente, actualizarPacientes}) => {
   
   const [fechaAtencion, setFechaAtencion] = useState('');
   const [nombrePaciente, setNombrePaciente] = useState('');
@@ -64,11 +64,11 @@ const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
           objetoPaciente.id = paciente.id //asigno el id al objeto paciente
           const pacientesActualizados = pacientes.map(pacienteState => 
             pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
-            setPacientes(pacientesActualizados)
+            actualizarPacientes(pacientesActualizados)
             setPaciente({})
         }else{//genera un nuevo registro
           objetoPaciente.id=generarId()
-          setPacientes([...pacientes, objetoPaciente])
+          agregarPaciente(objetoPaciente)
         }
 
         //reiniciar el form

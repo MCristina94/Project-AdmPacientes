@@ -17,13 +17,21 @@ function App() {
     obtenerLS();
   }, []);
 
-  useEffect(() => {
+  const agregarPaciente = (paciente) => {
+    const pacientesAgregados = [...pacientes, paciente]
+    setPacientes(pacientesAgregados)
+    localStorage.setItem('pacientes', JSON.stringify(pacientesAgregados));
+  }
+
+  const actualizarPacientes = (pacientes) => {
+    setPacientes(pacientes);
     localStorage.setItem('pacientes', JSON.stringify( pacientes ));
-  }, [pacientes])
+  }
 
   const eliminarPaciente = (id) => {
     const pacientesActualizados = pacientes.filter(paciente => paciente.id !== id);
     setPacientes(pacientesActualizados);
+    localStorage.setItem('pacientes', JSON.stringify( pacientesActualizados ));
   }
   
   return (
@@ -32,7 +40,8 @@ function App() {
 
     <div className="mt-12 md:flex">
     <Formulario
-    pacientes = {pacientes} setPacientes={setPacientes} paciente = {paciente} setPaciente={setPaciente}/>
+    pacientes = {pacientes} paciente = {paciente} setPaciente={setPaciente}
+    agregarPaciente={agregarPaciente} actualizarPacientes={actualizarPacientes}/>
     <ListadoPacientes
     pacientes={pacientes} setPaciente={setPaciente} eliminarPaciente={eliminarPaciente} />
     </div>
