@@ -9,7 +9,8 @@ Para visualizar la página web en acción, puedes hacer clic en el siguiente enl
 
 
 ## Inspiración 🤓
-Este proyecto fue inspirado en el curso de Udemy [Nombre del Curso], impartido por [Nombre del Instructor]. El curso proporcionó la base y la inspiración para desarrollar esta aplicación.
+Este proyecto fue inspirado en el curso de Udemy [React - La Guía Completa: Hooks Context Redux MERN +15 Apps
+], impartido por [Juan Pablo De la torre Valdez]. El curso proporcionó la base y la inspiración para desarrollar esta aplicación.
 
 ## Tecnologías utilizadas ⚙️
 
